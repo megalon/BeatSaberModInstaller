@@ -30,11 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.textBoxDirectory = new System.Windows.Forms.TextBox();
-            this.buttonFolderBrowser = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonInstall = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.buttonViewInfo = new System.Windows.Forms.Button();
+            this.buttonInstall = new System.Windows.Forms.Button();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageCore = new System.Windows.Forms.TabPage();
             this.listViewMods = new System.Windows.Forms.ListView();
@@ -55,13 +53,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabelDiscord = new System.Windows.Forms.LinkLabel();
             this.labelDiscordInfo = new System.Windows.Forms.Label();
-            this.buttonViewInfo = new System.Windows.Forms.Button();
+            this.buttonFolderBrowser = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.tableLayoutPanelInfo = new System.Windows.Forms.TableLayoutPanel();
             this.helpInfoLabel1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPluginsPath = new System.Windows.Forms.TextBox();
             this.helpInfoLabel3 = new System.Windows.Forms.Label();
+            this.textBoxDirectory = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panelDescription = new System.Windows.Forms.Panel();
+            this.webBrowserDescription = new System.Windows.Forms.WebBrowser();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelDescription = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabPageCore.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
@@ -69,59 +74,45 @@
             this.tabPageHelp.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.tableLayoutPanelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panelDescription.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxDirectory
+            // labelStatus
             // 
-            this.textBoxDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDirectory.Enabled = false;
-            this.textBoxDirectory.Location = new System.Drawing.Point(10, 25);
-            this.textBoxDirectory.Name = "textBoxDirectory";
-            this.textBoxDirectory.Size = new System.Drawing.Size(530, 22);
-            this.textBoxDirectory.TabIndex = 0;
-            this.textBoxDirectory.TextChanged += new System.EventHandler(this.textBoxDirectory_TextChanged);
+            this.labelStatus.Location = new System.Drawing.Point(15, 602);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(241, 145);
+            this.labelStatus.TabIndex = 5;
+            this.labelStatus.Text = "Status: Null";
             // 
-            // buttonFolderBrowser
+            // buttonViewInfo
             // 
-            this.buttonFolderBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFolderBrowser.Location = new System.Drawing.Point(546, 25);
-            this.buttonFolderBrowser.Name = "buttonFolderBrowser";
-            this.buttonFolderBrowser.Size = new System.Drawing.Size(26, 23);
-            this.buttonFolderBrowser.TabIndex = 1;
-            this.buttonFolderBrowser.Text = "..";
-            this.buttonFolderBrowser.UseVisualStyleBackColor = true;
-            this.buttonFolderBrowser.Click += new System.EventHandler(this.buttonFolderBrowser_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Beat Saber Folder Path:";
+            this.buttonViewInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonViewInfo.Enabled = false;
+            this.buttonViewInfo.Location = new System.Drawing.Point(262, 602);
+            this.buttonViewInfo.Name = "buttonViewInfo";
+            this.buttonViewInfo.Size = new System.Drawing.Size(158, 23);
+            this.buttonViewInfo.TabIndex = 9;
+            this.buttonViewInfo.Text = "View Selected Mod Info";
+            this.buttonViewInfo.UseVisualStyleBackColor = true;
+            this.buttonViewInfo.Click += new System.EventHandler(this.buttonViewInfo_Click);
             // 
             // buttonInstall
             // 
             this.buttonInstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInstall.Location = new System.Drawing.Point(462, 401);
+            this.buttonInstall.Location = new System.Drawing.Point(426, 602);
             this.buttonInstall.Name = "buttonInstall";
             this.buttonInstall.Size = new System.Drawing.Size(112, 23);
             this.buttonInstall.TabIndex = 4;
             this.buttonInstall.Text = "Install / Update";
             this.buttonInstall.UseVisualStyleBackColor = true;
             this.buttonInstall.Click += new System.EventHandler(this.buttonInstall_Click);
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStatus.Location = new System.Drawing.Point(7, 406);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(285, 145);
-            this.labelStatus.TabIndex = 5;
-            this.labelStatus.Text = "Status: Null";
             // 
             // tabControlMain
             // 
@@ -132,10 +123,10 @@
             this.tabControlMain.Controls.Add(this.tabPageCredits);
             this.tabControlMain.Controls.Add(this.tabPageHelp);
             this.tabControlMain.Enabled = false;
-            this.tabControlMain.Location = new System.Drawing.Point(10, 140);
+            this.tabControlMain.Location = new System.Drawing.Point(14, 147);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(566, 255);
+            this.tabControlMain.Size = new System.Drawing.Size(528, 449);
             this.tabControlMain.TabIndex = 8;
             // 
             // tabPageCore
@@ -144,7 +135,7 @@
             this.tabPageCore.Location = new System.Drawing.Point(4, 22);
             this.tabPageCore.Name = "tabPageCore";
             this.tabPageCore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCore.Size = new System.Drawing.Size(558, 229);
+            this.tabPageCore.Size = new System.Drawing.Size(520, 423);
             this.tabPageCore.TabIndex = 0;
             this.tabPageCore.Text = "Plugins";
             this.tabPageCore.UseVisualStyleBackColor = true;
@@ -163,7 +154,7 @@
             this.listViewMods.FullRowSelect = true;
             this.listViewMods.Location = new System.Drawing.Point(6, 6);
             this.listViewMods.Name = "listViewMods";
-            this.listViewMods.Size = new System.Drawing.Size(546, 217);
+            this.listViewMods.Size = new System.Drawing.Size(508, 411);
             this.listViewMods.TabIndex = 0;
             this.listViewMods.UseCompatibleStateImageBehavior = false;
             this.listViewMods.View = System.Windows.Forms.View.Details;
@@ -210,7 +201,7 @@
             this.tabPageCredits.Controls.Add(this.labelModSaber1);
             this.tabPageCredits.Location = new System.Drawing.Point(4, 22);
             this.tabPageCredits.Name = "tabPageCredits";
-            this.tabPageCredits.Size = new System.Drawing.Size(558, 229);
+            this.tabPageCredits.Size = new System.Drawing.Size(520, 432);
             this.tabPageCredits.TabIndex = 1;
             this.tabPageCredits.Text = "Mod Manager Credits";
             this.tabPageCredits.UseVisualStyleBackColor = true;
@@ -219,7 +210,7 @@
             // 
             this.linkLabelContributors.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelContributors.AutoSize = true;
-            this.linkLabelContributors.Location = new System.Drawing.Point(232, 137);
+            this.linkLabelContributors.Location = new System.Drawing.Point(213, 239);
             this.linkLabelContributors.Name = "linkLabelContributors";
             this.linkLabelContributors.Size = new System.Drawing.Size(73, 13);
             this.linkLabelContributors.TabIndex = 7;
@@ -231,7 +222,7 @@
             // 
             this.linkLabellolPants.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabellolPants.AutoSize = true;
-            this.linkLabellolPants.Location = new System.Drawing.Point(386, 92);
+            this.linkLabellolPants.Location = new System.Drawing.Point(367, 194);
             this.linkLabellolPants.Name = "linkLabellolPants";
             this.linkLabellolPants.Size = new System.Drawing.Size(48, 13);
             this.linkLabellolPants.TabIndex = 5;
@@ -243,7 +234,7 @@
             // 
             this.linkLabelUmbranox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelUmbranox.AutoSize = true;
-            this.linkLabelUmbranox.Location = new System.Drawing.Point(302, 114);
+            this.linkLabelUmbranox.Location = new System.Drawing.Point(283, 216);
             this.linkLabelUmbranox.Name = "linkLabelUmbranox";
             this.linkLabelUmbranox.Size = new System.Drawing.Size(60, 13);
             this.linkLabelUmbranox.TabIndex = 4;
@@ -255,7 +246,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(174, 114);
+            this.label3.Location = new System.Drawing.Point(155, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 13);
             this.label3.TabIndex = 3;
@@ -265,7 +256,7 @@
             // 
             this.labelModSaber2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelModSaber2.AutoSize = true;
-            this.labelModSaber2.Location = new System.Drawing.Point(329, 92);
+            this.labelModSaber2.Location = new System.Drawing.Point(310, 194);
             this.labelModSaber2.Name = "labelModSaber2";
             this.labelModSaber2.Size = new System.Drawing.Size(60, 13);
             this.labelModSaber2.TabIndex = 2;
@@ -275,7 +266,7 @@
             // 
             this.linkLabelModSaberLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelModSaberLink.AutoSize = true;
-            this.linkLabelModSaberLink.Location = new System.Drawing.Point(273, 92);
+            this.linkLabelModSaberLink.Location = new System.Drawing.Point(254, 194);
             this.linkLabelModSaberLink.Name = "linkLabelModSaberLink";
             this.linkLabelModSaberLink.Size = new System.Drawing.Size(60, 13);
             this.linkLabelModSaberLink.TabIndex = 1;
@@ -287,7 +278,7 @@
             // 
             this.labelModSaber1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelModSaber1.AutoSize = true;
-            this.labelModSaber1.Location = new System.Drawing.Point(92, 92);
+            this.labelModSaber1.Location = new System.Drawing.Point(73, 194);
             this.labelModSaber1.Name = "labelModSaber1";
             this.labelModSaber1.Size = new System.Drawing.Size(187, 13);
             this.labelModSaber1.TabIndex = 0;
@@ -301,7 +292,7 @@
             this.tabPageHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPageHelp.Name = "tabPageHelp";
             this.tabPageHelp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHelp.Size = new System.Drawing.Size(558, 229);
+            this.tabPageHelp.Size = new System.Drawing.Size(520, 432);
             this.tabPageHelp.TabIndex = 2;
             this.tabPageHelp.Text = "Help";
             this.tabPageHelp.UseVisualStyleBackColor = true;
@@ -310,7 +301,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(212, 91);
+            this.label4.Location = new System.Drawing.Point(193, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 2;
@@ -321,7 +312,7 @@
             // 
             this.linkLabelDiscord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelDiscord.AutoSize = true;
-            this.linkLabelDiscord.Location = new System.Drawing.Point(189, 137);
+            this.linkLabelDiscord.Location = new System.Drawing.Point(170, 239);
             this.linkLabelDiscord.Name = "linkLabelDiscord";
             this.linkLabelDiscord.Size = new System.Drawing.Size(145, 13);
             this.linkLabelDiscord.TabIndex = 1;
@@ -334,24 +325,23 @@
             // 
             this.labelDiscordInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDiscordInfo.AutoSize = true;
-            this.labelDiscordInfo.Location = new System.Drawing.Point(117, 114);
+            this.labelDiscordInfo.Location = new System.Drawing.Point(98, 216);
             this.labelDiscordInfo.Name = "labelDiscordInfo";
             this.labelDiscordInfo.Size = new System.Drawing.Size(303, 13);
             this.labelDiscordInfo.TabIndex = 0;
             this.labelDiscordInfo.Text = "Join us on the Beat Saber Modding Group Discord server!";
             this.labelDiscordInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonViewInfo
+            // buttonFolderBrowser
             // 
-            this.buttonViewInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonViewInfo.Enabled = false;
-            this.buttonViewInfo.Location = new System.Drawing.Point(298, 401);
-            this.buttonViewInfo.Name = "buttonViewInfo";
-            this.buttonViewInfo.Size = new System.Drawing.Size(158, 23);
-            this.buttonViewInfo.TabIndex = 9;
-            this.buttonViewInfo.Text = "View Selected Mod Info";
-            this.buttonViewInfo.UseVisualStyleBackColor = true;
-            this.buttonViewInfo.Click += new System.EventHandler(this.buttonViewInfo_Click);
+            this.buttonFolderBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFolderBrowser.Location = new System.Drawing.Point(512, 30);
+            this.buttonFolderBrowser.Name = "buttonFolderBrowser";
+            this.buttonFolderBrowser.Size = new System.Drawing.Size(26, 23);
+            this.buttonFolderBrowser.TabIndex = 1;
+            this.buttonFolderBrowser.Text = "..";
+            this.buttonFolderBrowser.UseVisualStyleBackColor = true;
+            this.buttonFolderBrowser.Click += new System.EventHandler(this.buttonFolderBrowser_Click);
             // 
             // panelInfo
             // 
@@ -361,9 +351,9 @@
             this.panelInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelInfo.Controls.Add(this.tableLayoutPanelInfo);
             this.panelInfo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelInfo.Location = new System.Drawing.Point(10, 54);
+            this.panelInfo.Location = new System.Drawing.Point(14, 58);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(564, 80);
+            this.panelInfo.Size = new System.Drawing.Size(524, 80);
             this.panelInfo.TabIndex = 10;
             // 
             // tableLayoutPanelInfo
@@ -385,7 +375,7 @@
             this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelInfo.Size = new System.Drawing.Size(564, 79);
+            this.tableLayoutPanelInfo.Size = new System.Drawing.Size(524, 79);
             this.tableLayoutPanelInfo.TabIndex = 13;
             // 
             // helpInfoLabel1
@@ -417,7 +407,7 @@
             this.textBoxPluginsPath.Name = "textBoxPluginsPath";
             this.textBoxPluginsPath.ReadOnly = true;
             this.textBoxPluginsPath.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBoxPluginsPath.Size = new System.Drawing.Size(555, 15);
+            this.textBoxPluginsPath.Size = new System.Drawing.Size(515, 15);
             this.textBoxPluginsPath.TabIndex = 5;
             this.textBoxPluginsPath.Click += new System.EventHandler(this.textBoxPluginsPath_Click);
             this.textBoxPluginsPath.Leave += new System.EventHandler(this.textBoxPluginsPath_Leave);
@@ -431,19 +421,100 @@
             this.helpInfoLabel3.TabIndex = 3;
             this.helpInfoLabel3.Text = "You can uninstall mods by removing the .dll from that folder.";
             // 
+            // textBoxDirectory
+            // 
+            this.textBoxDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxDirectory.Enabled = false;
+            this.textBoxDirectory.Location = new System.Drawing.Point(14, 30);
+            this.textBoxDirectory.Name = "textBoxDirectory";
+            this.textBoxDirectory.Size = new System.Drawing.Size(492, 22);
+            this.textBoxDirectory.TabIndex = 0;
+            this.textBoxDirectory.TextChanged += new System.EventHandler(this.textBoxDirectory_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Beat Saber Folder Path:";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tabControlMain);
+            this.splitContainer1.Panel1.Controls.Add(this.panelInfo);
+            this.splitContainer1.Panel1.Controls.Add(this.labelStatus);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonViewInfo);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonInstall);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxDirectory);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonFolderBrowser);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.labelDescription);
+            this.splitContainer1.Panel2.Controls.Add(this.labelTitle);
+            this.splitContainer1.Panel2.Controls.Add(this.panelDescription);
+            this.splitContainer1.Size = new System.Drawing.Size(1090, 637);
+            this.splitContainer1.SplitterDistance = 545;
+            this.splitContainer1.TabIndex = 11;
+            // 
+            // panelDescription
+            // 
+            this.panelDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDescription.Controls.Add(this.webBrowserDescription);
+            this.panelDescription.Location = new System.Drawing.Point(3, 58);
+            this.panelDescription.Name = "panelDescription";
+            this.panelDescription.Size = new System.Drawing.Size(526, 567);
+            this.panelDescription.TabIndex = 6;
+            // 
+            // webBrowserDescription
+            // 
+            this.webBrowserDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowserDescription.IsWebBrowserContextMenuEnabled = false;
+            this.webBrowserDescription.Location = new System.Drawing.Point(0, 0);
+            this.webBrowserDescription.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserDescription.Name = "webBrowserDescription";
+            this.webBrowserDescription.Size = new System.Drawing.Size(524, 565);
+            this.webBrowserDescription.TabIndex = 6;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(3, 14);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(249, 20);
+            this.labelTitle.TabIndex = 7;
+            this.labelTitle.Text = "Mod Name by Author Name Version";
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Location = new System.Drawing.Point(4, 39);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(69, 13);
+            this.labelDescription.TabIndex = 8;
+            this.labelDescription.Text = "Description:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 436);
-            this.Controls.Add(this.panelInfo);
-            this.Controls.Add(this.buttonViewInfo);
-            this.Controls.Add(this.tabControlMain);
-            this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.buttonInstall);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonFolderBrowser);
-            this.Controls.Add(this.textBoxDirectory);
+            this.ClientSize = new System.Drawing.Size(1090, 637);
+            this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
@@ -460,13 +531,19 @@
             this.panelInfo.ResumeLayout(false);
             this.tableLayoutPanelInfo.ResumeLayout(false);
             this.tableLayoutPanelInfo.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.panelDescription.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
+        
         private System.Windows.Forms.TextBox textBoxDirectory;
         private System.Windows.Forms.Button buttonFolderBrowser;
         private System.Windows.Forms.Label label1;
@@ -499,6 +576,11 @@
         private System.Windows.Forms.Label labelDiscordInfo;
         private System.Windows.Forms.LinkLabel linkLabelDiscord;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panelDescription;
+        private System.Windows.Forms.WebBrowser webBrowserDescription;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelDescription;
     }
 }
 

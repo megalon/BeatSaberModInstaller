@@ -9,6 +9,8 @@ using System.Diagnostics;
 using System.Drawing;
 using SemVer;
 using Version = SemVer.Version;
+using CommonMark;
+using mshtml;
 
 namespace BeatSaberModManager
 {
@@ -112,6 +114,45 @@ namespace BeatSaberModManager
 
             UpdateStatus("Releases loaded.");
             tabControlMain.Enabled = true;
+        }
+        #endregion
+
+        #region ReleaseInfo
+        private ReleaseInfo _release;
+        public void DisplayReleaseInfo(ReleaseInfo release)
+        {
+            _release = release;
+            labelTitle.Text = string.Format("{0} by {1} {2}", release.title, release.author, release.version);
+            DescriptionHandler();
+        }
+        private void DescriptionHandler()
+        {
+            string description = CommonMarkConverter.Convert(_release.description);
+            webBrowserDescription.DocumentText = description;
+        }
+        
+        private void webBrowserDescription_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            Console.WriteLine("InitCSS");
+            InitCSS();
+        }
+
+        // Add CSS styling to the webBrowser object
+        private void InitCSS()
+        {
+            IHTMLDocument2 document = (webBrowserDescription.Document.DomDocument) as IHTMLDocument2;
+
+            // The first parameter is the url, the second is the index of the added style sheet.
+            IHTMLStyleSheet styleSheet = document.createStyleSheet("", 0);
+
+            // Change the font for everything in the document. Font list taken from the Github readme page
+            int index = styleSheet.addRule("*", "font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";");
+
+            // Edit existing rules
+            // styleSheet.cssText = @"h1 { color: blue; }";
+
+            // Remove existing rules
+            // styleSheet.removeRule(index);
         }
         #endregion
 
@@ -296,14 +337,16 @@ namespace BeatSaberModManager
 
         private void buttonViewInfo_Click(object sender, EventArgs e)
         {
-            new FormDetailViewer((ReleaseInfo)listViewMods.SelectedItems[0].Tag).ShowDialog();
+            DisplayReleaseInfo((ReleaseInfo)listViewMods.SelectedItems[0].Tag);
+            //new FormDetailViewer((ReleaseInfo)listViewMods.SelectedItems[0].Tag).ShowDialog();
         }
 
         private void viewInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (listViewMods.SelectedItems.Count >= 1)
             {
-                new FormDetailViewer((ReleaseInfo)listViewMods.SelectedItems[0].Tag).ShowDialog();
+                DisplayReleaseInfo((ReleaseInfo)listViewMods.SelectedItems[0].Tag);
+                //new FormDetailViewer((ReleaseInfo)listViewMods.SelectedItems[0].Tag).ShowDialog();
             }
         }
 

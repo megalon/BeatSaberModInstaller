@@ -200,6 +200,18 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormMainV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMainV2.Designer.cs">
+      <DependentUpon>FormMainV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMainV3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMainV3.Designer.cs">
+      <DependentUpon>FormMainV3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPlatformSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMainV2.resx">
+      <DependentUpon>FormMainV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMainV3.resx">
+      <DependentUpon>FormMainV3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPlatformSelect.resx">
       <DependentUpon>FormPlatformSelect.cs</DependentUpon>
